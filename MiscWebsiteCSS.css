@@ -178,13 +178,81 @@ hr{
 }
 
 .big-section-header{
-	font-size:96px;
+	font-size:40px;
 }
 
-.column-container{
-	width:33%;
+.row-text{
+	width:50%;
+	padding:5%;
+	height:380.5px;
+}
+
+.row-text h6{
+	font-size:20px;
+	font-family:'Raleway';
+	color:red;
+}
+
+.row-text p{
 	display:inline-block;
+	font-size:14px;
+	font-family:'Raleway';
+}
+
+.row-image{
+	width:50%;
+	padding:3%;
+	min-width:500px;
+}
+
+.row-image img{
+	height:300px;
+	position:relative;
+	width:500px;
+	padding:10px;
+	border: 1px dotted #dddddd;
+	float:right;
+}
+
+.odd-row{
+	background-color:rgb(255, 245, 245);
+}
+
+.row-text:nth-child(3){
+	float:left;
+}
+
+.row-image:nth-child(4){
+	float:right;
+}
+
+.row-image:nth-child(5){
+	float:left;
+}
+
+.row-text:nth-child(6){
+	float:right;
+}
+
+.row-text:nth-child(7){
+	float:left;
+}
+
+.row-image:nth-child(8){
+	float:right;
+}
+
+.verticalLine{
+	float:right;
+	position:relative;
+	top:-60px;
+	right: 15%;
+	font-size:256px;;
+	font-weight:100;
 	text-align:center;
+	width:25px;
+	overflow:hidden;
+	color:#eeeeee;
 }
 
 .img-offscreen{
