@@ -49,7 +49,7 @@
 			<a href="#FAQs" class="menu-item" style="left:27%;">FAQ's</a>
 		</div>
 		<div class="section clearfix" id="About-ADC">
-			<h2 class="big-section-header">ADC Is About</h2>
+			<h2>About ADC</h2>
 			<hr>
 			<div class="row-text">
 				<h6>Who</h6>
@@ -98,9 +98,6 @@
 				   We made a taboo app that does taboo things. It's pretty cool. It's an app.
 				   We made a taboo app that does taboo things. It's pretty cool. It's an app.
 				   We made a taboo app that does taboo things. It's pretty cool. It's an app.</p>
-				   <br>
-				   <br>
-				   <br>
 				<p class="publish">Published: In Process</p>
 			</div>
 			<div class="project right-project box-shadow">
@@ -113,9 +110,6 @@
 				   We made a taboo app that does taboo things. It's pretty cool. It's an app.
 				   We made a taboo app that does taboo things. It's pretty cool. It's an app.
 				   We made a taboo app that does taboo things. It's pretty cool. It's an app.</p>
-				   <br>
-				   <br>
-				   <br>
 				<p class="publish">Published: In Process</p>
 			</div>
 		</div>
@@ -152,9 +146,15 @@
 		
 		<script>
 			
+			window.addEventListener('resize', function(){onResize()});
+            window.onload(onResize());
+            
+            resizeFlag = 1;
+            
 			function dropAccordion(question){
 				var e = document.getElementById(question);
 				var child = e.getElementsByClassName("accordion-content");
+
 				if(child[0].style.display == ""){
 					child[0].style.display = "block";
 					child[0].style.color = 'color:rgba(0, 0, 0, 1)';
@@ -165,6 +165,25 @@
 					child[0].style.color = 'color:rgba(0, 0, 0, 0)';
 					e.getElementsByTagName('span')[0].style.transform = 'rotate(0deg)';
 				}
+			}
+            
+            function onResize(){
+                console.log(window.innerWidth);
+                if(window.innerWidth <= 1020 && resizeFlag){
+                    element = document.getElementsByClassName("row-image odd-row")[0]; // Remove image from before txt so it can be put after txt
+                    element.parentNode.removeChild(element);
+                   
+                    insertAfter(element, document.getElementsByClassName("row-text odd-row")[0]);
+                    
+                    text = document.getElementsByClassName("row-text odd-row")[0];
+                    image = document.getElementsByClassName("row-image")[0];
+                    text.style.zIndex = "-1";
+                    image.style.zIndex = "10";
+                }
+            }
+            
+            function insertAfter(newNode, referenceNode) {
+				referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 			}
 		</script>
 		<footer>
