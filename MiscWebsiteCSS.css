@@ -157,10 +157,10 @@ img{
 }
 
 #menuToolbar{
-	margin-top:10px;
+	margin-top:20px;
 	margin-left:20px;
 	height:40px;
-	width:40px;
+	width:10%;
 	border-radius:5px;
 	border: solid white;
     background-color:white;
@@ -312,7 +312,7 @@ hr{
 
 .project{
 	width:400px;
-	height:500px;
+	min-height:500px;
 	margin-left:10%;
 	float:left;
 	-webkit-transition: width 1s, height 1s; /* Safari */
@@ -482,6 +482,9 @@ a:active{
     }
     .menu-item{
         display:none;
+    }
+    .accordion-drop h3{
+        font-size:20px;
     }
 }
 
