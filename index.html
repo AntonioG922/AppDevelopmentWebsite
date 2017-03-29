@@ -48,10 +48,10 @@
 				<h4>NCSU</h4>
 			</div>
 			<h4 class="header-h4">App Development Club</h4>
-			<a href="#Who Are We" class="menu-item" style="right:30%;">Who Are We</a>
-			<a href="#About-ADC" class="menu-item" style="right:10%">About ADC</a>
-			<a href="#Projects" class="menu-item" style="left:5%;">Projects</a>
-			<a href="#FAQs" class="menu-item" style="left:27%;">FAQ's</a>
+			<a href="#Who Are We" class="menu-item">Who Are We</a>
+			<a href="#About-ADC" class="menu-item">About ADC</a>
+			<a href="#Projects" class="menu-item">Projects</a>
+			<a href="#FAQs" class="menu-item">FAQ's</a>
 		</div>
 		<div class="section clearfix" id="About-ADC">
 			<h2>About ADC</h2>
@@ -180,14 +180,26 @@
                 if(window.innerWidth <= 1020 && resizeFlag){
                     aboutSection = document.getElementById("About-ADC");
                     
-                    element = document.getElementsByClassName("row-image odd-row")[0]; // Remove image from before txt so it can be put after txt
+                    image = document.getElementsByClassName("row-image odd-row")[0]; // Remove image from before txt so it can be put after txt
                     
-                    insertAfter(element, document.getElementsByClassName("row-text odd-row")[0]);
+                    insertAfter(image, document.getElementsByClassName("row-text odd-row")[0]);
                     
                     text = document.getElementsByClassName("row-text odd-row")[0];
                     resizeFlag = false;
                     text.style.zIndex = -1;
                     document.getElementsByClassName("row-image")[0].style.marginBottom = "20px";
+                }
+                else if(window.innerWidth >=1020 && !resizeFlag){
+                    image = document.getElementsByClassName("row-image odd-row")[0];
+                    
+                    insertAfter(image, document.getElementsByClassName("row-image")[0]);
+                    
+                    document.getElementsByClassName("row-image")[0].style.marginBottom = "0px";
+                    
+                    text = document.getElementsByClassName("row-text odd-row")[0];
+                    text.style.zIndex = 0;
+                    
+                    resizeFlag = true;
                 }
             }
             

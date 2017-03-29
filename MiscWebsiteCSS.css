@@ -156,6 +156,22 @@ img{
     transition: all .3s;
 }
 
+.header a:nth-child(3){
+    right:30%;
+}
+
+.header a:nth-child(4){
+    right:10%;
+}
+
+.header a:nth-child(5){
+    left:5%;
+}
+
+.header a:nth-child(6){
+    left:27%;
+}
+
 #menuToolbar{
 	margin-top:20px;
 	margin-left:20px;
@@ -342,8 +358,8 @@ hr{
 }
 
 .project img{
-	height:200px;
 	width:100%;
+    height: auto;
 	filter: grayscale(1);
 	-webkit-transition: all 1s; /* Safari  */
 	-moz-transition: all 1s;	 /* Mozilla */
@@ -357,6 +373,7 @@ hr{
 
 .project:hover .publish{
 	color:rgba(187, 187, 187, 1);
+    margin-top: 100px;
 	visibility:visible;
     -webkit-transition-delay: 1s; /* Safari  */
 	-moz-transition-delay: 1s;   /* Mozilla */
@@ -486,6 +503,9 @@ a:active{
     .accordion-drop h3{
         font-size:20px;
     }
+    .project h5{
+        font-size:20px;
+    }
 }
 
 @media only screen and (max-width: 1020px){
@@ -513,10 +533,19 @@ a:active{
         margin-top:30px;
     }
     .odd-row img{
-        width:87.5%;
+        width:70%;
     }
     .row-text:nth-child(6){
         float:left;
+    }
+    .header a:nth-child(3){
+        right:20%;
+    }
+    .header a:nth-child(5){
+        left:0%;
+    }
+    .header a:nth-child(6){
+        left:10%;
     }
 }
 
@@ -525,11 +554,7 @@ a:active{
 		
 	}
     .project{
-        width:70%;
-        float:initial;
-        margin:auto;
-        margin-top:50px;
-        margin-bottom:50px;
+        width:300px;
     }
 }
 
@@ -537,6 +562,13 @@ a:active{
 	 .footer-panel{
 		width:280px;
 	}
+    .project{
+        width:80%;
+        float:initial;
+        margin:auto;
+        margin-top:50px;
+        margin-bottom:50px;
+    }
 }
 
 .footer-panel h4{
