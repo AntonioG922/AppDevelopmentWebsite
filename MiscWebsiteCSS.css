@@ -1,3 +1,18 @@
+#page{
+    transition: all 0.3s;
+}
+
+.active-page{
+    -webkit-transform: translateX(30%);
+    -webkit-transition: all 0.3s;
+    -moz-transform: translate(30%);
+    -moz-transition: all 0.3s;
+    -o-transform: translate(30%);
+    -o-transition: all 0.3s;
+    transform: translate(30%);
+    transition: all 0.3s;
+}
+
 .navigation-bar{
 	position:fixed;
 	width:100%;
@@ -128,7 +143,6 @@ img{
 	left:240px;
 	font-size:24px;
     max-width:inherit;
-    border:thin solid blue;
 	font-family:'Raleway';
 	color:rgba(0, 0, 0, 0);
 	-webkit-transition: all .2s;  /* Safari  */
@@ -210,6 +224,62 @@ img{
 #menuToolbar:hover .bottom{
 	margin-top:25%;
 	margin-bottom:15%;
+}
+
+.sidebar{
+    position: fixed;
+    display:none;
+    width: 30%;
+    height: 100%;
+    z-index:50;
+    padding-top:20px;
+    background-color: whitesmoke;
+    -webkit-transform: translateX(-100%);
+    -webkit-transition: all 0.3s;
+    -moz-transform: translate(-100%);
+    -moz-transition: all 0.3s;
+    -o-transform: translate(-100%);
+    -o-transition: all 0.3s;
+    transform: translate(-100%);
+    transition: all 0.3s;
+}
+
+.sidebar hr{
+    border-top:1px solid red;
+}
+
+.sidebar li{
+    text-decoration:none;
+    font-size: 16px;
+    display: block;
+    cursor:pointer;
+    color: red;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+    transition: all 0.3s;
+}
+
+.sidebar li:hover{
+    -webkit-transform: scale(1.2);
+    -webkit-transition: all 0.3s;
+    -moz-transform: scale(1.2);
+    -moz-transition: all 0.3s;
+    -o-transform: scale(1.2);
+    -o-transition: all 0.3s;
+    transform: scale(1.2);
+    transition: all 0.3s;
+    color:red;
+    text-decoration:none;
+    position:relative;
+    padding-left:10%;
+}
+
+.active-sidebar{
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px);
 }
 
 hr{
@@ -505,6 +575,9 @@ a:active{
     }
     .project h5{
         font-size:20px;
+    }
+    .sidebar{
+        display:block;
     }
 }
 
