@@ -3,13 +3,13 @@
 }
 
 .active-page{
-    -webkit-transform: translateX(30%);
+    -webkit-transform: translateX(200px);
     -webkit-transition: all 0.3s;
-    -moz-transform: translate(30%);
+    -moz-transform: translate(200px);
     -moz-transition: all 0.3s;
-    -o-transform: translate(30%);
+    -o-transform: translate(200px);
     -o-transition: all 0.3s;
-    transform: translate(30%);
+    transform: translate(200px);
     transition: all 0.3s;
 }
 
@@ -197,10 +197,6 @@ img{
 	display:none;
     position:fixed;
 	z-index:60;
-}
-
-.nav-active{
-    margin-left:50px !important;
 }
 
 .line{
@@ -529,6 +525,7 @@ hr{
 	margin:0px;
 	padding-top:20px;
 	padding-bottom:10px;
+    padding-right:30px; 
 }
 
 .accordion-drop h3::before{
