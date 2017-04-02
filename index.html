@@ -162,6 +162,8 @@
 		<script>
 			
             resizeFlag = true;
+            footerFlag = true;
+            
 			window.addEventListener('resize', function(){onResize()});
             
             window.onload(onResize());
@@ -184,7 +186,6 @@
 			}
             
             function onResize(){
-                document.getElementById("menuToolbar").style.height = window.innerWidth/10 + "px";
                 
                 console.log(window.innerWidth);
                 if(window.innerWidth <= 1020 && resizeFlag){
@@ -195,11 +196,12 @@
                     insertAfter(image, document.getElementsByClassName("row-text odd-row")[0]);
                     
                     text = document.getElementsByClassName("row-text odd-row")[0];
-                    resizeFlag = false;
                     text.style.zIndex = -1;
                     document.getElementsByClassName("row-image")[0].style.marginBottom = "20px";
+                    
+                    resizeFlag = false;
                 }
-                else if(window.innerWidth >=1020 && !resizeFlag){
+                else if(window.innerWidth > 1020 && !resizeFlag){
                     image = document.getElementsByClassName("row-image odd-row")[0];
                     
                     insertAfter(image, document.getElementsByClassName("row-image")[0]);
@@ -210,6 +212,35 @@
                     text.style.zIndex = 0;
                     
                     resizeFlag = true;
+                }
+                
+                if(window.innerWidth <= 1087 && footerFlag){
+                    console.log("Med");
+                    bottomPanel = document.getElementsByClassName("footer-panel")[0];
+                    
+                    // Add active classes to footer panels
+                    bottomPanel.className += " med-bottom-panel";
+                    document.getElementsByClassName("footer-panel")[1].className += " med-footer-panel";
+                    document.getElementsByClassName("footer-panel")[2].className += " med-footer-panel";
+                    
+                    // Move title panel to bottom of footer
+                    insertAfter(bottomPanel, document.getElementsByClassName("footer-panel med-footer-panel")[1]);
+                    
+                    footerFlag = false;
+                }
+                else if(window.innerWidth > 1087 && !footerFlag){
+                    console.log("Reg");
+                     bottomPanel = document.getElementsByClassName("footer-panel med-bottom-panel")[0];
+                    
+                    // Add active classes to footer panels
+                    bottomPanel.className = "footer-panel";
+                    document.getElementsByClassName("footer-panel med-footer-panel")[0].className = "footer-panel";
+                    document.getElementsByClassName("footer-panel med-footer-panel")[0].className = "footer-panel";
+                    
+                    // Move title panel to top of footer
+                    bottomPanel.parentNode.insertBefore(bottomPanel, document.getElementsByClassName("footer-panel")[0]);
+                    
+                    footerFlag = true;
                 }
             }
             
@@ -278,7 +309,7 @@
 				}
             }
 		</script>
-		<footer>
+		<footer style="display:inline-block">
 			<div class="footer">
 				<div class="footer-panel">
 					<h4>NCSU ADC</h4>

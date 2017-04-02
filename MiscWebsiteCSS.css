@@ -190,7 +190,7 @@ img{
 	margin-top:20px;
 	margin-left:20px;
 	height:40px;
-	width:10%;
+	width:40px;
 	border-radius:5px;
 	border: solid white;
     background-color:white;
@@ -233,7 +233,7 @@ img{
     height: 100%;
     z-index:50;
     padding-top:20px;
-    background-color: whitesmoke;
+    background-color: white;
     -webkit-transform: translateX(-100%);
     -webkit-transition: all 0.3s;
     -moz-transform: translate(-100%);
@@ -242,15 +242,19 @@ img{
     -o-transition: all 0.3s;
     transform: translate(-100%);
     transition: all 0.3s;
+    box-shadow:inset -10px 0 10px rgba(232,16,16,.95);
 }
 
 .sidebar hr{
     border-top:1px solid red;
+    position:relative;
+    right:10px;
 }
 
 .sidebar li{
     text-decoration:none;
     font-size: 16px;
+    font-family:'Raleway';
     display: block;
     cursor:pointer;
     color: red;
@@ -518,12 +522,13 @@ hr{
 
 footer{
     background:#181719;
+    width:100%;
 }
 
 .footer{
-	height: 250px;
+    width:92.5%;
 	background: #181719;
-    padding-left: 7.5%;
+    margin-left: 7.5%;
 	color: white;
 }
 
@@ -557,28 +562,32 @@ a:active{
 	background-color:#181719;
 }
 
-@media only screen and (max-width: 1087px){
-	.footer{
-		height:500px;
-	}
+.med-footer-panel{
+    width:50%;
+    min-width:315px;
 }
 
-@media only screen and (max-width: 600px){
-    #menuToolbar{
-        display:block;
+.med-bottom-panel{
+    width:100%;
+    text-align:center;
+    position:relative;
+    right:3.75%;
+}
+
+.med-bottom-panel h4{
+    font-size:48px;
+}
+
+@media only screen and (max-width: 1100px){
+    .project{
+        width:300px;
     }
-    .menu-item{
-        display:none;
-    }
-    .accordion-drop h3{
-        font-size:20px;
-    }
-    .project h5{
-        font-size:20px;
-    }
-    .sidebar{
-        display:block;
-    }
+}
+
+@media only screen and (max-width: 1087px){
+	.footer-panel{
+        
+	}
 }
 
 @media only screen and (max-width: 1020px){
@@ -622,18 +631,8 @@ a:active{
     }
 }
 
-@media only screen and (max-width: 1100px){
-	.footer-panel{
-		
-	}
-    .project{
-        width:300px;
-    }
-}
-
 @media only screen and (max-width: 800px){
 	 .footer-panel{
-		width:280px;
 	}
     .project{
         width:80%;
@@ -641,6 +640,43 @@ a:active{
         margin:auto;
         margin-top:50px;
         margin-bottom:50px;
+    }
+    .header-h4{
+        font-size:18px;
+        left:205px;
+    }
+}
+
+@media only screen and (max-width: 698px){
+    .footer-panel{
+        
+    }
+    .med-footer-panel{
+        width:75%;
+        min-width:315px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    #menuToolbar{
+        display:block;
+    }
+    .menu-item{
+        display:none;
+    }
+    .accordion-drop h3{
+        font-size:20px;
+    }
+    .project h5{
+        font-size:20px;
+    }
+    .sidebar{
+        display:block;
+    }
+    .header-h4{
+        bottom:-100px;
+        left:0px;
+        font-size:24px;
     }
 }
 
