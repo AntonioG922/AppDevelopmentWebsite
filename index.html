@@ -221,8 +221,8 @@
                     
                     // Add active classes to footer panels
                     bottomPanel.className += " med-bottom-panel";
+                    document.getElementsByClassName("footer-panel")[0].className += " med-footer-panel";
                     document.getElementsByClassName("footer-panel")[1].className += " med-footer-panel";
-                    document.getElementsByClassName("footer-panel")[2].className += " med-footer-panel";
                     
                     // Move title panel to bottom of footer
                     insertAfter(bottomPanel, document.getElementsByClassName("footer-panel med-footer-panel")[1]);
