@@ -199,37 +199,81 @@ img{
 	z-index:60;
 }
 
+.nav-active{
+    margin-left:50px !important;
+}
+
 .line{
 	display:block;
-	width:75%;
-	margin:12.5%;
-	margin-top:20%;
-	margin-bottom:20%;
-	border: thin solid red;
+	width:30px;
+	height:2px;
+    margin:15px 2px;
+    background: red;
+    position:relative;
 	-webkit-transition: all .5s;  /* Safari  */
 	-moz-transition: all .5s;	 /* Mozilla */
 	-o-transition: all .5s;     /* Opera   */
     transition: all .5s;
 }
 
+.line::before, .line::after{
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: red;
+    position: absolute;
+    z-index:1;
+	-webkit-transition: all .5s;  /* Safari  */
+	-moz-transition: all .5s;	 /* Mozilla */
+	-o-transition: all .5s;     /* Opera   */
+    transition: all .5s;
+}
+
+.line::before{
+    top:-9px;
+}
+
+.line::after{
+    top:9px;
+}
+
+.nav-active .line{
+    background:none;
+}
+
+.nav-active .line::before{
+    top:0 !important;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.nav-active .line::after{
+    top:0 !important;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
 #menuToolbar:hover{
 	cursor: pointer;
 }
 
-#menuToolbar:hover .top{
-	margin-top:15%;
-	margin-bottom:25%;
+#menuToolbar:hover .line::before{
+    top:-11px;
 }
 
-#menuToolbar:hover .bottom{
-	margin-top:25%;
-	margin-bottom:15%;
+#menuToolbar:hover .line::after{
+    top:11px;
 }
 
 .sidebar{
     position: fixed;
     display:none;
-    width: 30%;
+    width: 200px;
     height: 100%;
     z-index:50;
     padding-top:20px;
@@ -242,7 +286,6 @@ img{
     -o-transition: all 0.3s;
     transform: translate(-100%);
     transition: all 0.3s;
-    box-shadow:inset -10px 0 10px rgba(232,16,16,.95);
 }
 
 .sidebar hr{
