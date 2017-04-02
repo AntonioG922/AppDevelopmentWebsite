@@ -88,15 +88,15 @@ img{
 	text-align:center;
 }
 
-.header:hover .ruler, .header:hover .paintbrush, .header:hover .pencil{
+.header:hover .ruler, .header:hover .paintbrush, .header:hover .pencil, .header:focus .ruler, .header:focus .paintbrush, .header:focus .pencil{
 	opacity:0;
 }
 
-.header:hover .header-inset h1{
+.header:hover .header-inset h1, .header:focus .header-inset h1{
 	color:rgba(0, 0, 0, 0);
 }
 
-.header:hover h4{
+.header:hover h4, .header:focus h4{
 	color:rgba(0, 0, 0, 1);
 }
 
