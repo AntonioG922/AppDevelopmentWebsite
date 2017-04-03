@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="Antonio Gargano">
-		<link rel="shortcut icon" href="C:\Users\Antonio Gargano\Pictures\AndroidIcon.jpeg">
+		<link rel="shortcut icon" href="C:\Users\Antonio Gargano\Pictures\ADCWebsitePics\AndroidIcon.jpeg">
 		<link type="text/css" rel="stylesheet" href="MiscWebsiteCSS.css">
 		
 		<!-- Fonts -->
@@ -18,10 +18,40 @@
 
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        
+        <script>
+        $(document).ready(function(){
+          // Add smooth scrolling to all links
+          $("a").on('click', function(event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+              // Prevent default anchor click behavior
+              event.preventDefault();
+
+              // Store hash
+              var hash = this.hash;
+
+              // Using jQuery's animate() method to add smooth page scroll
+              // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 800, function(){
+
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              });
+            } // End if
+          });
+        });
+        </script>
 
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		
+        <!-- My Javascript file -->
+        <script src="ADCJS.js"></script>
+        
 		<style>
 		
 		.accordion-toggle {cursor: pointer; margin: 0;}
@@ -45,313 +75,310 @@
             </ul>
         </nav>
         <div id="page">
-        <div id="menuToolbar" onclick="sidebarPullout()">
-            <span class="line">
-                
-            </span>
-        </div>
-		<div class="header" id="Top">
-			<div class="header-inset">
-				<img class="ruler" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzNTUuNDgzIDM1NS40ODMiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDM1NS40ODMgMzU1LjQ4MzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJCgkJPHJlY3QgeD0iLTMzLjc5MiIgeT0iMTM1LjA4NCIgdHJhbnNmb3JtPSJtYXRyaXgoLTAuNzA3MSAtMC43MDcxIDAuNzA3MSAtMC43MDcxIDE3Mi45MTczIDQxNy40MDU4KSIgc3R5bGU9ImZpbGw6Izc3QjhFODsiIHdpZHRoPSI0MTMuMzk2IiBoZWlnaHQ9Ijc1LjYxMiIvPgoJCgkJPHJlY3QgeD0iMzE3LjAzMyIgeT0iMjg2LjA5OCIgdHJhbnNmb3JtPSJtYXRyaXgoMC43MDcxIDAuNzA3MSAtMC43MDcxIDAuNzA3MSAzMjMuODk5IC0xMzQuMTU0MikiIHN0eWxlPSJmaWxsOiMwMDlCREU7IiB3aWR0aD0iMTMuNzA5IiBoZWlnaHQ9Ijc1LjYxMSIvPgoJPGc+CgkJCgkJCTxyZWN0IHg9IjQ4LjM5MSIgeT0iOS41ODciIHRyYW5zZm9ybT0ibWF0cml4KC0wLjcwNzEgLTAuNzA3MSAwLjcwNzEgLTAuNzA3MSA3MC42MTc1IDkxLjIyNTQpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYyMiIgaGVpZ2h0PSI0Mi44MDEiLz4KCQkKCQkJPHJlY3QgeD0iNzQuMjA4IiB5PSIzMi45OTkiIHRyYW5zZm9ybT0ibWF0cml4KC0wLjcwNzEgLTAuNzA3MSAwLjcwNzEgLTAuNzA3MSAxMDIuMjI3NyAxMzkuNTY1OSkiIHN0eWxlPSJmaWxsOiMzMzNFNDg7IiB3aWR0aD0iMTEuNjIyIiBoZWlnaHQ9IjMxLjIyNSIvPgoJCQoJCQk8cmVjdCB4PSI5MS44MjciIHk9IjUzLjAyMSIgdHJhbnNmb3JtPSJtYXRyaXgoLTAuNzA3MSAtMC43MDcxIDAuNzA3MSAtMC43MDcxIDExNC4wNTUxIDE5Ni4wODYzKSIgc3R5bGU9ImZpbGw6IzMzM0U0ODsiIHdpZHRoPSIxMS42MjIiIGhlaWdodD0iNDIuODAxIi8+CgkJCgkJCTxyZWN0IHg9IjExNy42MzgiIHk9Ijc2LjQzMyIgdHJhbnNmb3JtPSJtYXRyaXgoLTAuNzA3MSAtMC43MDcxIDAuNzA3MSAtMC43MDcxIDE0NS42NTI3IDI0NC40MjE5KSIgc3R5bGU9ImZpbGw6IzMzM0U0ODsiIHdpZHRoPSIxMS42MiIgaGVpZ2h0PSIzMS4yMjUiLz4KCQkKCQkJPHJlY3QgeD0iMTM1LjI2NiIgeT0iOTYuNDU1IiB0cmFuc2Zvcm09Im1hdHJpeCgtMC43MDcxIC0wLjcwNzEgMC43MDcxIC0wLjcwNzEgMTU3LjQ5NzUgMzAwLjk1MDEpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYyMyIgaGVpZ2h0PSI0Mi44MDIiLz4KCQkKCQkJPHJlY3QgeD0iMTYxLjA3OSIgeT0iMTE5Ljg2OCIgdHJhbnNmb3JtPSJtYXRyaXgoLTAuNzA3MSAtMC43MDcxIDAuNzA3MSAtMC43MDcxIDE4OS4wOTg4IDM0OS4yODcpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYyIiBoZWlnaHQ9IjMxLjIyNSIvPgoJCQoJCQk8cmVjdCB4PSIxNzguNzA2IiB5PSIxMzkuODg5IiB0cmFuc2Zvcm09Im1hdHJpeCgtMC43MDcxIC0wLjcwNzEgMC43MDcxIC0wLjcwNzEgMjAwLjkzOTcgNDA1LjgxMTIpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYyIiBoZWlnaHQ9IjQyLjgwMiIvPgoJCQoJCQk8cmVjdCB4PSIyMDQuNTA4IiB5PSIxNjMuMzAzIiB0cmFuc2Zvcm09Im1hdHJpeCgtMC43MDcxIC0wLjcwNzEgMC43MDcxIC0wLjcwNzEgMjMyLjUyMzEgNDU0LjE0NTEpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYyIiBoZWlnaHQ9IjMxLjIyNSIvPgoJCQoJCQk8cmVjdCB4PSIyMjIuMTMxIiB5PSIxODMuMzI1IiB0cmFuc2Zvcm09Im1hdHJpeCgtMC43MDcxIC0wLjcwNzEgMC43MDcxIC0wLjcwNzEgMjQ0LjM1NzUgNTEwLjY2NzEpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYyIiBoZWlnaHQ9IjQyLjgwMiIvPgoJCQoJCQk8cmVjdCB4PSIyNDcuOTI1IiB5PSIyMDYuNzM5IiB0cmFuc2Zvcm09Im1hdHJpeCgtMC43MDcxIC0wLjcwNzEgMC43MDcxIC0wLjcwNzEgMjc1LjkyNTQgNTU4Ljk5NDgpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYxOCIgaGVpZ2h0PSIzMS4yMjYiLz4KCQkKCQkJPHJlY3QgeD0iMjY1LjU2IiB5PSIyMjYuNzYiIHRyYW5zZm9ybT0ibWF0cml4KC0wLjcwNyAtMC43MDcyIDAuNzA3MiAtMC43MDcgMjg3LjcyOTQgNjE1LjUyNjEpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYyIiBoZWlnaHQ9IjQyLjgwMSIvPgoJCQoJCQk8cmVjdCB4PSIzMDguOTc3IiB5PSIyNzAuMTk1IiB0cmFuc2Zvcm09Im1hdHJpeCgtMC43MDcxIC0wLjcwNzEgMC43MDcxIC0wLjcwNzEgMzMxLjE4NjggNzIwLjM3MTgpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYyIiBoZWlnaHQ9IjQyLjgwMSIvPgoJCQoJCQk8cmVjdCB4PSIyOTEuMzY0IiB5PSIyNTAuMTcyIiB0cmFuc2Zvcm09Im1hdHJpeCgtMC43MDcyIC0wLjcwNyAwLjcwNyAtMC43MDcyIDMxOS40MjYxIDY2My44NTQxKSIgc3R5bGU9ImZpbGw6IzMzM0U0ODsiIHdpZHRoPSIxMS42MiIgaGVpZ2h0PSIzMS4yMjciLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
-				<img class="paintbrush" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojRkZENzg4OyIgZD0iTTI3Ny4wNjYsMzc5LjM4NWM2LjkzMy0zLjg0NSwxMS44MzMtMTAuOTUxLDEyLjM3My0xOS4zODVsMTkuMDY4LTMwNC4xMDkgICAgQzMxMC40LDI1LjYwNCwyODYuMzQ2LDAsMjU2LDBzLTU0LjQsMjUuNjA0LTUyLjUwNyw1NS44OTFMMjIyLjU2MSwzNjBjMC41NCw4LjQzNSw1LjQ0LDE1LjU0MSwxMi4zNzMsMTkuMzg1SDI3Ny4wNjZ6Ii8+Cgk8L2c+Cgk8Zz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojRTZCRThBOyIgZD0iTTI1NS43ODEsMC4wMTJjLTMwLjI0MSwwLjEyNS01NC4xNzYsMjUuNjY2LTUyLjI4OCw1NS44NzlMMjIyLjU2MSwzNjAgICAgYzAuNTQsOC40MzUsNS40NCwxNS41NDEsMTIuMzczLDE5LjM4NWgyMC44NDdWMC4wMTJ6Ii8+Cgk8L2c+Cgk8Zz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojODY4NDkxOyIgZD0iTTI4OS40MzksMzYwbDYuMDE5LTk2aC03OC45MTZsNi4wMTksOTZjMC41NCw4LjQzNSw1LjQ0LDE1LjU0MSwxMi4zNzMsMTkuMzg1aDQyLjEzMiAgICBDMjgzLjk5OSwzNzUuNTQsMjg4Ljg5OSwzNjguNDM0LDI4OS40MzksMzYweiIvPgoJPC9nPgoJPGc+CgkJPHBhdGggc3R5bGU9ImZpbGw6I0I0QjZCQzsiIGQ9Ik0yNTUuNzgxLDM3OS4zODVoMjEuMjg1YzYuOTMzLTMuODQ1LDExLjgzMy0xMC45NTEsMTIuMzczLTE5LjM4NWw2LjAxOS05NmgtMzkuNjc3VjM3OS4zODV6Ii8+Cgk8L2c+Cgk8Zz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojOTk2NDU5OyIgZD0iTTMwNCw0MTQuNWMwLDMxLjIwMy0yOS4yMDksODAuNDYzLTQyLjA1Niw5NC44MmMtMy4xODgsMy41NjMtOC43MTQsMy41NzUtMTEuOTE2LDAuMDI1ICAgIEMyMzcuMTY1LDQ5NS4wODEsMjA4LDQ0Ni4wNjksMjA4LDQxNC41YzAtMjYuNTEsMjEuNDktNDgsNDgtNDhDMjgyLjUxLDM2Ni41LDMwNCwzODcuOTksMzA0LDQxNC41eiIvPgoJPC9nPgoJPGc+CgkJPHBhdGggc3R5bGU9ImZpbGw6IzdFNUM2MjsiIGQ9Ik0yNTUuNzgxLDM2Ni41MTFDMjI5LjM3MywzNjYuNjMxLDIwOCwzODguMDY0LDIwOCw0MTQuNWMwLDMxLjU2OSwyOS4xNjUsODAuNTgyLDQyLjAyNyw5NC44NDUgICAgYzEuNTQ4LDEuNzE3LDMuNjQ2LDIuNTYsNS43NTMsMi42MTJMMjU1Ljc4MSwzNjYuNTExTDI1NS43ODEsMzY2LjUxMXoiLz4KCTwvZz4KCTxnPgoJCTxwb2x5Z29uIHN0eWxlPSJmaWxsOiM4Njg0OTE7IiBwb2ludHM9IjI5My40NTIsMjk2IDI5NC40NTUsMjgwIDIxNy41NDUsMjgwIDIxOC41NDgsMjk2ICAgIi8+Cgk8L2c+Cgk8Zz4KCQk8Zz4KCQkJPHBvbHlnb24gc3R5bGU9ImZpbGw6IzVDNTQ2QTsiIHBvaW50cz0iMjU1Ljc4MSwyODAgMjE3LjU0NSwyODAgMjE4LjU0OCwyOTYgMjU1Ljc4MSwyOTYgICAgIi8+CgkJPC9nPgoJCTxnPgoJCQk8cG9seWdvbiBzdHlsZT0iZmlsbDojNUM1NDZBOyIgcG9pbnRzPSIyOTMuNDUyLDI5NiAyOTQuNDU1LDI4MCAyOTQuNDU1LDI4MCAgICAiLz4KCQk8L2c+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
-				<img class="pencil" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIuMDk2IDUxMi4wOTYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMi4wOTYgNTEyLjA5NjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPGc+CgkJPHBhdGggc3R5bGU9ImZpbGw6I0U2QkU5NDsiIGQ9Ik0yOTYuMTU4LDBoLTgwYy00LjQxOCwwLTgsMy41ODItOCw4djM3Nmw0NC4yODIsMTI1LjQ2NmMxLjIzOCwzLjUwNyw2LjE5OCwzLjUwNyw3LjQzNSwwICAgIEwzMDQuMTU4LDM4NFY4QzMwNC4xNTgsMy41ODIsMzAwLjU3NiwwLDI5Ni4xNTgsMHoiLz4KCTwvZz4KCTxnPgoJCTxwYXRoIHN0eWxlPSJmaWxsOiNGRkQ3ODg7IiBkPSJNMjU1LjkzOSwyODB2MjMyaDAuNTQ0YzEuNDMxLTAuMTE5LDIuODItMC45MDksMy4zOTMtMi41MzRMMzA0LjE1OCwzODRWMjgwSDI1NS45Mzl6Ii8+Cgk8L2c+Cgk8Zz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojRkZDRDAwOyIgZD0iTTI5Ni4xNTgsMGgtODBjLTQuNDE4LDAtOCwzLjU4Mi04LDh2Mzc2YzAtOC44MzcsNy4xNjQtMTYsMTYtMTZzMTYsNy4xNjMsMTYsMTYgICAgYzAtOC44MzcsNy4xNjQtMTYsMTYtMTZzMTYsNy4xNjMsMTYsMTZjMC04LjgzNyw3LjE2NC0xNiwxNi0xNnMxNiw3LjE2MywxNiwxNlY4QzMwNC4xNTgsMy41ODIsMzAwLjU3NiwwLDI5Ni4xNTgsMHoiLz4KCTwvZz4KCTxnPgoJCTxwYXRoIHN0eWxlPSJmaWxsOiNGRkNEMDA7IiBkPSJNMjQwLjE1OCwzODRjMC04LjgzNyw3LjE2NC0xNiwxNi0xNmM4LjA5MiwwLDE0LjcxMSw2LjAyOCwxNS43ODEsMTMuODI2VjBoLTMydjM4MS44MjYgICAgQzI0MC4wMzcsMzgyLjU0NCwyNDAuMTU4LDM4My4yNTUsMjQwLjE1OCwzODR6Ii8+Cgk8L2c+Cgk8Zz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojRkY5MTAwOyIgZD0iTTIwOC4xNTgsMzg0YzAtOC44MzcsNy4xNjQtMTYsMTYtMTZjOC4wOTIsMCwxNC43MTEsNi4wMjgsMTUuNzgxLDEzLjgyNlYwaC0yNCAgICBjLTQuNDE4LDAtOCwzLjU4Mi04LDh2MzczLjgyNkMyMDguMDM3LDM4Mi41NDQsMjA4LjE1OCwzODMuMjU1LDIwOC4xNTgsMzg0eiIvPgoJPC9nPgoJPGc+CgkJPHBhdGggc3R5bGU9ImZpbGw6I0ZGRTY3MTsiIGQ9Ik0zMDMuNzE5LDM4NGMwLTguODM3LTcuMTY0LTE2LTE2LTE2Yy04LjA5MiwwLTE0LjcxMSw2LjAyOC0xNS43ODEsMTMuODI2VjBoMjQgICAgYzQuNDE4LDAsOCwzLjU4Miw4LDh2MzczLjgyNkMzMDMuODQsMzgyLjU0NCwzMDMuNzE5LDM4My4yNTUsMzAzLjcxOSwzODR6Ii8+Cgk8L2c+Cgk8Zz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojNUM1NDZBOyIgZD0iTTIzMy41Nyw0NTZsMTguODcxLDUzLjQ2NmMxLjIzOCwzLjUwNyw2LjE5OCwzLjUwNyw3LjQzNiwwTDI3OC43NDYsNDU2SDIzMy41N3oiLz4KCTwvZz4KCTxnPgoJCTxwYXRoIHN0eWxlPSJmaWxsOiM4Njg0OTE7IiBkPSJNMjU1LjkzOSw1MTIuMDMxYzEuNjI0LDAuMDkxLDMuMjg4LTAuNzI0LDMuOTM3LTIuNTY1TDI3OC43NDYsNDU2aC0yMi44MDhMMjU1LjkzOSw1MTIuMDMxICAgIEwyNTUuOTM5LDUxMi4wMzF6Ii8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
-				<h4>NCSU</h4>
-			</div>
-			<h4 class="header-h4">App Development Club</h4>
-			<a href="#Who Are We" class="menu-item">Who Are We</a>
-			<a href="#About-ADC" class="menu-item">About ADC</a>
-			<a href="#Projects" class="menu-item">Projects</a>
-			<a href="#FAQs" class="menu-item">FAQ's</a>
-		</div>
-		<div class="section clearfix" id="About-ADC">
-			<h2>About ADC</h2>
-			<hr>
-			<div class="row-text">
-				<h6>Who</h6>
-				<p>Who are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are we
-				Who are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are we
-				Who are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are we
-				Who are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are we
-				Who are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are we</p>
-			</div>
-			<div class="row-image">
-				<img src="https://cdn3.tnwcdn.com/wp-content/blogs.dir/1/files/2015/03/appstoreoptimization.jpg" alt="Who image">
-			</div>
-			<div class="row-image odd-row">
-				<img src="https://cdn3.tnwcdn.com/wp-content/blogs.dir/1/files/2015/03/appstoreoptimization.jpg" alt="Why image">
-			</div>
-			<div class="row-text odd-row">
-				<h6>Why</h6>
-				<p>Why are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are we
-				Why are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are we
-				Why are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are we
-				Why are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are we
-				Why are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are we</p>
-			</div>
-			<div class="row-text">
-				<h6>What</h6>
-				<p>What are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are we
-				What are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are we
-				What are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are we
-				What are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are we
-				What are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are we</p>
-			</div>
-			<div class="row-image">
-				<img src="https://cdn3.tnwcdn.com/wp-content/blogs.dir/1/files/2015/03/appstoreoptimization.jpg" alt="What image">
-			</div>
-		</div>
-		<div class="section clearfix" id="Projects">
-			<h2>Projects</h2>
-			<hr>
-			<div class="project box-shadow">
-				<img src="https://cdn3.tnwcdn.com/wp-content/blogs.dir/1/files/2015/03/appstoreoptimization.jpg" alt="App Image"/>
-				<h5>Taboo App | iOS, Android</h5>
-				<hr>
-				<p>We made a taboo app that does taboo things. It's pretty cool. It's an app.
-				   We made a taboo app that does taboo things. It's pretty cool. It's an app.
-				   We made a taboo app that does taboo things. It's pretty cool. It's an app.
-				   We made a taboo app that does taboo things. It's pretty cool. It's an app.
-				   We made a taboo app that does taboo things. It's pretty cool. It's an app.
-				   We made a taboo app that does taboo things. It's pretty cool. It's an app.</p>
-				<p class="publish">Published: In Process</p>
-			</div>
-			<div class="project right-project box-shadow">
-				<img src="https://cdn3.tnwcdn.com/wp-content/blogs.dir/1/files/2015/03/appstoreoptimization.jpg" alt="App Image"/>
-				<h5>Next Up App | iOS</h5>
-				<hr>
-				<p>We made a taboo app that does taboo things. It's pretty cool. It's an app.
-				   We made a taboo app that does taboo things. It's pretty cool. It's an app.
-				   We made a taboo app that does taboo things. It's pretty cool. It's an app.
-				   We made a taboo app that does taboo things. It's pretty cool. It's an app.
-				   We made a taboo app that does taboo things. It's pretty cool. It's an app.
-				   We made a taboo app that does taboo things. It's pretty cool. It's an app.</p>
-				<p class="publish">Published: In Process</p>
-			</div>
-		</div>
-		<ul class="section accordions" id="FAQs">
-		<div class="container">
-			<h2>Frequently Asked Questions</h2>
-			<hr>
-			<div class="accordion-drop" id="question1" onclick="dropAccordion('question1')">
-				<h3 class="accordion-toggle">Do I need any app development or programming experience to join?</h3>
-				<span class="glyphicon glyphicon-chevron-right"></span>
-				<p class="accordion-content" id="content1">No! Whether you're a certified expert in app development or just learning what
-				programming is we'd love to have you join the club. Our members range from novice programmers taking their
-				first classes to students with years of experience under their belts. While we would encourage you to take
-				a look at the app development software and environment, we're more than happy to introduce you to the subject
-				of app development!</p>
-			</div>
-			<div class="accordion-drop" id="question2" onclick="dropAccordion('question2')">
-				<h3 class="accordion-toggle">Do I need any programming experience to join?</h3>
-				<span class="glyphicon glyphicon-chevron-right"></span>
-				<p class="accordion-content">Yes you dimwitted fuck</p>
-			</div>
-			<div class="accordion-drop" id="question3" onclick="dropAccordion('question3')">
-				<h3 class="accordion-toggle">When does the club meet?</h3>
-				<span class="glyphicon glyphicon-chevron-right"></span>
-				<p class="accordion-content">Wednesdays at 8:00 PM in the Student Involvement Room(located in Talley Student Union)</p>
-			</div>
-			<div class="accordion-drop" id="question4" onclick="dropAccordion('question4')">
-				<h3 class="accordion-toggle">Are there any club dues?</h3>
-				<span class="glyphicon glyphicon-chevron-right"></span>
-				<p class="accordion-content">No</p>
-			</div>
-		</div>
-		</ul>
-		
-		<script>
-			
-            resizeFlag = true;
-            footerFlag = true;
-            sidebarFlag = false;
-            
-			window.addEventListener('resize', function(){onResize()});
-            
-            window.onload(onResize());
-            
-            
-			function dropAccordion(question){
-				var e = document.getElementById(question);
-				var child = e.getElementsByClassName("accordion-content");
+            <div id="menuToolbar" onclick="sidebarPullout()">
+                <span class="line"></span>
+            </div>
+            <div class="header" id="Top">
+                <div class="header-inset">
+                    <img class="ruler" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzNTUuNDgzIDM1NS40ODMiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDM1NS40ODMgMzU1LjQ4MzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJCgkJPHJlY3QgeD0iLTMzLjc5MiIgeT0iMTM1LjA4NCIgdHJhbnNmb3JtPSJtYXRyaXgoLTAuNzA3MSAtMC43MDcxIDAuNzA3MSAtMC43MDcxIDE3Mi45MTczIDQxNy40MDU4KSIgc3R5bGU9ImZpbGw6Izc3QjhFODsiIHdpZHRoPSI0MTMuMzk2IiBoZWlnaHQ9Ijc1LjYxMiIvPgoJCgkJPHJlY3QgeD0iMzE3LjAzMyIgeT0iMjg2LjA5OCIgdHJhbnNmb3JtPSJtYXRyaXgoMC43MDcxIDAuNzA3MSAtMC43MDcxIDAuNzA3MSAzMjMuODk5IC0xMzQuMTU0MikiIHN0eWxlPSJmaWxsOiMwMDlCREU7IiB3aWR0aD0iMTMuNzA5IiBoZWlnaHQ9Ijc1LjYxMSIvPgoJPGc+CgkJCgkJCTxyZWN0IHg9IjQ4LjM5MSIgeT0iOS41ODciIHRyYW5zZm9ybT0ibWF0cml4KC0wLjcwNzEgLTAuNzA3MSAwLjcwNzEgLTAuNzA3MSA3MC42MTc1IDkxLjIyNTQpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYyMiIgaGVpZ2h0PSI0Mi44MDEiLz4KCQkKCQkJPHJlY3QgeD0iNzQuMjA4IiB5PSIzMi45OTkiIHRyYW5zZm9ybT0ibWF0cml4KC0wLjcwNzEgLTAuNzA3MSAwLjcwNzEgLTAuNzA3MSAxMDIuMjI3NyAxMzkuNTY1OSkiIHN0eWxlPSJmaWxsOiMzMzNFNDg7IiB3aWR0aD0iMTEuNjIyIiBoZWlnaHQ9IjMxLjIyNSIvPgoJCQoJCQk8cmVjdCB4PSI5MS44MjciIHk9IjUzLjAyMSIgdHJhbnNmb3JtPSJtYXRyaXgoLTAuNzA3MSAtMC43MDcxIDAuNzA3MSAtMC43MDcxIDExNC4wNTUxIDE5Ni4wODYzKSIgc3R5bGU9ImZpbGw6IzMzM0U0ODsiIHdpZHRoPSIxMS42MjIiIGhlaWdodD0iNDIuODAxIi8+CgkJCgkJCTxyZWN0IHg9IjExNy42MzgiIHk9Ijc2LjQzMyIgdHJhbnNmb3JtPSJtYXRyaXgoLTAuNzA3MSAtMC43MDcxIDAuNzA3MSAtMC43MDcxIDE0NS42NTI3IDI0NC40MjE5KSIgc3R5bGU9ImZpbGw6IzMzM0U0ODsiIHdpZHRoPSIxMS42MiIgaGVpZ2h0PSIzMS4yMjUiLz4KCQkKCQkJPHJlY3QgeD0iMTM1LjI2NiIgeT0iOTYuNDU1IiB0cmFuc2Zvcm09Im1hdHJpeCgtMC43MDcxIC0wLjcwNzEgMC43MDcxIC0wLjcwNzEgMTU3LjQ5NzUgMzAwLjk1MDEpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYyMyIgaGVpZ2h0PSI0Mi44MDIiLz4KCQkKCQkJPHJlY3QgeD0iMTYxLjA3OSIgeT0iMTE5Ljg2OCIgdHJhbnNmb3JtPSJtYXRyaXgoLTAuNzA3MSAtMC43MDcxIDAuNzA3MSAtMC43MDcxIDE4OS4wOTg4IDM0OS4yODcpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYyIiBoZWlnaHQ9IjMxLjIyNSIvPgoJCQoJCQk8cmVjdCB4PSIxNzguNzA2IiB5PSIxMzkuODg5IiB0cmFuc2Zvcm09Im1hdHJpeCgtMC43MDcxIC0wLjcwNzEgMC43MDcxIC0wLjcwNzEgMjAwLjkzOTcgNDA1LjgxMTIpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYyIiBoZWlnaHQ9IjQyLjgwMiIvPgoJCQoJCQk8cmVjdCB4PSIyMDQuNTA4IiB5PSIxNjMuMzAzIiB0cmFuc2Zvcm09Im1hdHJpeCgtMC43MDcxIC0wLjcwNzEgMC43MDcxIC0wLjcwNzEgMjMyLjUyMzEgNDU0LjE0NTEpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYyIiBoZWlnaHQ9IjMxLjIyNSIvPgoJCQoJCQk8cmVjdCB4PSIyMjIuMTMxIiB5PSIxODMuMzI1IiB0cmFuc2Zvcm09Im1hdHJpeCgtMC43MDcxIC0wLjcwNzEgMC43MDcxIC0wLjcwNzEgMjQ0LjM1NzUgNTEwLjY2NzEpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYyIiBoZWlnaHQ9IjQyLjgwMiIvPgoJCQoJCQk8cmVjdCB4PSIyNDcuOTI1IiB5PSIyMDYuNzM5IiB0cmFuc2Zvcm09Im1hdHJpeCgtMC43MDcxIC0wLjcwNzEgMC43MDcxIC0wLjcwNzEgMjc1LjkyNTQgNTU4Ljk5NDgpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYxOCIgaGVpZ2h0PSIzMS4yMjYiLz4KCQkKCQkJPHJlY3QgeD0iMjY1LjU2IiB5PSIyMjYuNzYiIHRyYW5zZm9ybT0ibWF0cml4KC0wLjcwNyAtMC43MDcyIDAuNzA3MiAtMC43MDcgMjg3LjcyOTQgNjE1LjUyNjEpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYyIiBoZWlnaHQ9IjQyLjgwMSIvPgoJCQoJCQk8cmVjdCB4PSIzMDguOTc3IiB5PSIyNzAuMTk1IiB0cmFuc2Zvcm09Im1hdHJpeCgtMC43MDcxIC0wLjcwNzEgMC43MDcxIC0wLjcwNzEgMzMxLjE4NjggNzIwLjM3MTgpIiBzdHlsZT0iZmlsbDojMzMzRTQ4OyIgd2lkdGg9IjExLjYyIiBoZWlnaHQ9IjQyLjgwMSIvPgoJCQoJCQk8cmVjdCB4PSIyOTEuMzY0IiB5PSIyNTAuMTcyIiB0cmFuc2Zvcm09Im1hdHJpeCgtMC43MDcyIC0wLjcwNyAwLjcwNyAtMC43MDcyIDMxOS40MjYxIDY2My44NTQxKSIgc3R5bGU9ImZpbGw6IzMzM0U0ODsiIHdpZHRoPSIxMS42MiIgaGVpZ2h0PSIzMS4yMjciLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+                    <img class="paintbrush" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojRkZENzg4OyIgZD0iTTI3Ny4wNjYsMzc5LjM4NWM2LjkzMy0zLjg0NSwxMS44MzMtMTAuOTUxLDEyLjM3My0xOS4zODVsMTkuMDY4LTMwNC4xMDkgICAgQzMxMC40LDI1LjYwNCwyODYuMzQ2LDAsMjU2LDBzLTU0LjQsMjUuNjA0LTUyLjUwNyw1NS44OTFMMjIyLjU2MSwzNjBjMC41NCw4LjQzNSw1LjQ0LDE1LjU0MSwxMi4zNzMsMTkuMzg1SDI3Ny4wNjZ6Ii8+Cgk8L2c+Cgk8Zz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojRTZCRThBOyIgZD0iTTI1NS43ODEsMC4wMTJjLTMwLjI0MSwwLjEyNS01NC4xNzYsMjUuNjY2LTUyLjI4OCw1NS44NzlMMjIyLjU2MSwzNjAgICAgYzAuNTQsOC40MzUsNS40NCwxNS41NDEsMTIuMzczLDE5LjM4NWgyMC44NDdWMC4wMTJ6Ii8+Cgk8L2c+Cgk8Zz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojODY4NDkxOyIgZD0iTTI4OS40MzksMzYwbDYuMDE5LTk2aC03OC45MTZsNi4wMTksOTZjMC41NCw4LjQzNSw1LjQ0LDE1LjU0MSwxMi4zNzMsMTkuMzg1aDQyLjEzMiAgICBDMjgzLjk5OSwzNzUuNTQsMjg4Ljg5OSwzNjguNDM0LDI4OS40MzksMzYweiIvPgoJPC9nPgoJPGc+CgkJPHBhdGggc3R5bGU9ImZpbGw6I0I0QjZCQzsiIGQ9Ik0yNTUuNzgxLDM3OS4zODVoMjEuMjg1YzYuOTMzLTMuODQ1LDExLjgzMy0xMC45NTEsMTIuMzczLTE5LjM4NWw2LjAxOS05NmgtMzkuNjc3VjM3OS4zODV6Ii8+Cgk8L2c+Cgk8Zz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojOTk2NDU5OyIgZD0iTTMwNCw0MTQuNWMwLDMxLjIwMy0yOS4yMDksODAuNDYzLTQyLjA1Niw5NC44MmMtMy4xODgsMy41NjMtOC43MTQsMy41NzUtMTEuOTE2LDAuMDI1ICAgIEMyMzcuMTY1LDQ5NS4wODEsMjA4LDQ0Ni4wNjksMjA4LDQxNC41YzAtMjYuNTEsMjEuNDktNDgsNDgtNDhDMjgyLjUxLDM2Ni41LDMwNCwzODcuOTksMzA0LDQxNC41eiIvPgoJPC9nPgoJPGc+CgkJPHBhdGggc3R5bGU9ImZpbGw6IzdFNUM2MjsiIGQ9Ik0yNTUuNzgxLDM2Ni41MTFDMjI5LjM3MywzNjYuNjMxLDIwOCwzODguMDY0LDIwOCw0MTQuNWMwLDMxLjU2OSwyOS4xNjUsODAuNTgyLDQyLjAyNyw5NC44NDUgICAgYzEuNTQ4LDEuNzE3LDMuNjQ2LDIuNTYsNS43NTMsMi42MTJMMjU1Ljc4MSwzNjYuNTExTDI1NS43ODEsMzY2LjUxMXoiLz4KCTwvZz4KCTxnPgoJCTxwb2x5Z29uIHN0eWxlPSJmaWxsOiM4Njg0OTE7IiBwb2ludHM9IjI5My40NTIsMjk2IDI5NC40NTUsMjgwIDIxNy41NDUsMjgwIDIxOC41NDgsMjk2ICAgIi8+Cgk8L2c+Cgk8Zz4KCQk8Zz4KCQkJPHBvbHlnb24gc3R5bGU9ImZpbGw6IzVDNTQ2QTsiIHBvaW50cz0iMjU1Ljc4MSwyODAgMjE3LjU0NSwyODAgMjE4LjU0OCwyOTYgMjU1Ljc4MSwyOTYgICAgIi8+CgkJPC9nPgoJCTxnPgoJCQk8cG9seWdvbiBzdHlsZT0iZmlsbDojNUM1NDZBOyIgcG9pbnRzPSIyOTMuNDUyLDI5NiAyOTQuNDU1LDI4MCAyOTQuNDU1LDI4MCAgICAiLz4KCQk8L2c+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+                    <img class="pencil" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIuMDk2IDUxMi4wOTYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMi4wOTYgNTEyLjA5NjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPGc+CgkJPHBhdGggc3R5bGU9ImZpbGw6I0U2QkU5NDsiIGQ9Ik0yOTYuMTU4LDBoLTgwYy00LjQxOCwwLTgsMy41ODItOCw4djM3Nmw0NC4yODIsMTI1LjQ2NmMxLjIzOCwzLjUwNyw2LjE5OCwzLjUwNyw3LjQzNSwwICAgIEwzMDQuMTU4LDM4NFY4QzMwNC4xNTgsMy41ODIsMzAwLjU3NiwwLDI5Ni4xNTgsMHoiLz4KCTwvZz4KCTxnPgoJCTxwYXRoIHN0eWxlPSJmaWxsOiNGRkQ3ODg7IiBkPSJNMjU1LjkzOSwyODB2MjMyaDAuNTQ0YzEuNDMxLTAuMTE5LDIuODItMC45MDksMy4zOTMtMi41MzRMMzA0LjE1OCwzODRWMjgwSDI1NS45Mzl6Ii8+Cgk8L2c+Cgk8Zz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojRkZDRDAwOyIgZD0iTTI5Ni4xNTgsMGgtODBjLTQuNDE4LDAtOCwzLjU4Mi04LDh2Mzc2YzAtOC44MzcsNy4xNjQtMTYsMTYtMTZzMTYsNy4xNjMsMTYsMTYgICAgYzAtOC44MzcsNy4xNjQtMTYsMTYtMTZzMTYsNy4xNjMsMTYsMTZjMC04LjgzNyw3LjE2NC0xNiwxNi0xNnMxNiw3LjE2MywxNiwxNlY4QzMwNC4xNTgsMy41ODIsMzAwLjU3NiwwLDI5Ni4xNTgsMHoiLz4KCTwvZz4KCTxnPgoJCTxwYXRoIHN0eWxlPSJmaWxsOiNGRkNEMDA7IiBkPSJNMjQwLjE1OCwzODRjMC04LjgzNyw3LjE2NC0xNiwxNi0xNmM4LjA5MiwwLDE0LjcxMSw2LjAyOCwxNS43ODEsMTMuODI2VjBoLTMydjM4MS44MjYgICAgQzI0MC4wMzcsMzgyLjU0NCwyNDAuMTU4LDM4My4yNTUsMjQwLjE1OCwzODR6Ii8+Cgk8L2c+Cgk8Zz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojRkY5MTAwOyIgZD0iTTIwOC4xNTgsMzg0YzAtOC44MzcsNy4xNjQtMTYsMTYtMTZjOC4wOTIsMCwxNC43MTEsNi4wMjgsMTUuNzgxLDEzLjgyNlYwaC0yNCAgICBjLTQuNDE4LDAtOCwzLjU4Mi04LDh2MzczLjgyNkMyMDguMDM3LDM4Mi41NDQsMjA4LjE1OCwzODMuMjU1LDIwOC4xNTgsMzg0eiIvPgoJPC9nPgoJPGc+CgkJPHBhdGggc3R5bGU9ImZpbGw6I0ZGRTY3MTsiIGQ9Ik0zMDMuNzE5LDM4NGMwLTguODM3LTcuMTY0LTE2LTE2LTE2Yy04LjA5MiwwLTE0LjcxMSw2LjAyOC0xNS43ODEsMTMuODI2VjBoMjQgICAgYzQuNDE4LDAsOCwzLjU4Miw4LDh2MzczLjgyNkMzMDMuODQsMzgyLjU0NCwzMDMuNzE5LDM4My4yNTUsMzAzLjcxOSwzODR6Ii8+Cgk8L2c+Cgk8Zz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojNUM1NDZBOyIgZD0iTTIzMy41Nyw0NTZsMTguODcxLDUzLjQ2NmMxLjIzOCwzLjUwNyw2LjE5OCwzLjUwNyw3LjQzNiwwTDI3OC43NDYsNDU2SDIzMy41N3oiLz4KCTwvZz4KCTxnPgoJCTxwYXRoIHN0eWxlPSJmaWxsOiM4Njg0OTE7IiBkPSJNMjU1LjkzOSw1MTIuMDMxYzEuNjI0LDAuMDkxLDMuMjg4LTAuNzI0LDMuOTM3LTIuNTY1TDI3OC43NDYsNDU2aC0yMi44MDhMMjU1LjkzOSw1MTIuMDMxICAgIEwyNTUuOTM5LDUxMi4wMzF6Ii8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+                    <h4>NCSU</h4>
+                </div>
+                <h4 class="header-h4">App Development Club</h4>
+                <a href="#Who Are We" class="menu-item">Who Are We</a>
+                <a href="#About-ADC" class="menu-item">About ADC</a>
+                <a href="#Projects" class="menu-item">Projects</a>
+                <a href="#FAQs" class="menu-item">FAQ's</a>
+            </div>
+            <div class="section clearfix" id="About-ADC">
+                <h2>About ADC</h2>
+                <hr>
+                <div class="row-text">
+                    <h6>Who</h6>
+                    <p>Who are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are we
+                    Who are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are we
+                    Who are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are we
+                    Who are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are we
+                    Who are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are weWho are we</p>
+                </div>
+                <div class="row-image">
+                    <img src="https://cdn3.tnwcdn.com/wp-content/blogs.dir/1/files/2015/03/appstoreoptimization.jpg" alt="Who image">
+                </div>
+                <div class="row-image odd-row">
+                    <img src="https://cdn3.tnwcdn.com/wp-content/blogs.dir/1/files/2015/03/appstoreoptimization.jpg" alt="Why image">
+                </div>
+                <div class="row-text odd-row">
+                    <h6>Why</h6>
+                    <p>Why are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are we
+                    Why are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are we
+                    Why are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are we
+                    Why are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are we
+                    Why are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are weWhy are we</p>
+                </div>
+                <div class="row-text">
+                    <h6>What</h6>
+                    <p>What are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are we
+                    What are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are we
+                    What are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are we
+                    What are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are we
+                    What are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are weWhat are we</p>
+                </div>
+                <div class="row-image">
+                    <img src="https://cdn3.tnwcdn.com/wp-content/blogs.dir/1/files/2015/03/appstoreoptimization.jpg" alt="What image">
+                </div>
+            </div>
+            <div class="section clearfix" id="Projects">
+                <h2>Projects</h2>
+                <hr>
+                <div class="project box-shadow">
+                    <img src="https://cdn3.tnwcdn.com/wp-content/blogs.dir/1/files/2015/03/appstoreoptimization.jpg" alt="App Image"/>
+                    <h5>Taboo App | iOS, Android</h5>
+                    <hr>
+                    <p>We made a taboo app that does taboo things. It's pretty cool. It's an app.
+                       We made a taboo app that does taboo things. It's pretty cool. It's an app.
+                       We made a taboo app that does taboo things. It's pretty cool. It's an app.
+                       We made a taboo app that does taboo things. It's pretty cool. It's an app.
+                       We made a taboo app that does taboo things. It's pretty cool. It's an app.
+                       We made a taboo app that does taboo things. It's pretty cool. It's an app.</p>
+                    <p class="publish">Published: In Process</p>
+                </div>
+                <div class="project right-project box-shadow">
+                    <img src="https://cdn3.tnwcdn.com/wp-content/blogs.dir/1/files/2015/03/appstoreoptimization.jpg" alt="App Image"/>
+                    <h5>Next Up App | iOS</h5>
+                    <hr>
+                    <p>We made a taboo app that does taboo things. It's pretty cool. It's an app.
+                       We made a taboo app that does taboo things. It's pretty cool. It's an app.
+                       We made a taboo app that does taboo things. It's pretty cool. It's an app.
+                       We made a taboo app that does taboo things. It's pretty cool. It's an app.
+                       We made a taboo app that does taboo things. It's pretty cool. It's an app.
+                       We made a taboo app that does taboo things. It's pretty cool. It's an app.</p>
+                    <p class="publish">Published: In Process</p>
+                </div>
+            </div>
+            <ul class="section accordions" id="FAQs">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <hr>
+                <div class="accordion-drop" id="question1" onclick="dropAccordion('question1')">
+                    <h3 class="accordion-toggle">Do I need any app development or programming experience to join?</h3>
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <p class="accordion-content" id="content1">No! Whether you're a certified expert in app development or just learning what
+                    programming is we'd love to have you join the club. Our members range from novice programmers taking their
+                    first classes to students with years of experience under their belts. While we would encourage you to take
+                    a look at the app development software and environment, we're more than happy to introduce you to the subject
+                    of app development!</p>
+                </div>
+                <div class="accordion-drop" id="question2" onclick="dropAccordion('question2')">
+                    <h3 class="accordion-toggle">Do I need any programming experience to join?</h3>
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <p class="accordion-content">Yes you dimwitted fuck</p>
+                </div>
+                <div class="accordion-drop" id="question3" onclick="dropAccordion('question3')">
+                    <h3 class="accordion-toggle">When does the club meet?</h3>
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <p class="accordion-content">Wednesdays at 8:00 PM in the Student Involvement Room(located in Talley Student Union)</p>
+                </div>
+                <div class="accordion-drop" id="question4" onclick="dropAccordion('question4')">
+                    <h3 class="accordion-toggle">Are there any club dues?</h3>
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <p class="accordion-content">No</p>
+                </div>
+            </div>
+            </ul>
 
-				if(child[0].style.display == ""){32
-					child[0].style.display = "block";
-					child[0].style.color = 'color:rgba(0, 0, 0, 1)';
-					e.getElementsByTagName('span')[0].style.transform = 'rotate(90deg)';
-				}
-				else{
-					child[0].style.display = "";
-					child[0].style.color = 'color:rgba(0, 0, 0, 0)';
-					e.getElementsByTagName('span')[0].style.transform = 'rotate(0deg)';
-				}
-			}
-            
-            function onResize(){
-                
-                console.log(window.innerWidth);
-                if(window.innerWidth <= 1020 && resizeFlag){
-                    aboutSection = document.getElementById("About-ADC");
-                    
-                    image = document.getElementsByClassName("row-image odd-row")[0]; // Remove image from before txt so it can be put after txt
-                    
-                    insertAfter(image, document.getElementsByClassName("row-text odd-row")[0]);
-                    
-                    text = document.getElementsByClassName("row-text odd-row")[0];
-                    text.style.zIndex = -1;
-                    document.getElementsByClassName("row-image")[0].style.marginBottom = "20px";
-                    
-                    resizeFlag = false;
+            <script>
+                var resizeFlag = true;
+                var footerFlag = true;
+                var sidebarFlag = false;
+
+                var i;
+                for (i = 0; i < document.getElementById('Projects').children.length - 2; i = i + 1) {
+                    document.getElementById('Projects').children[i + 2].id = "project" + (i + 1);
                 }
-                else if(window.innerWidth > 1020 && !resizeFlag){
-                    image = document.getElementsByClassName("row-image odd-row")[0];
-                    
-                    insertAfter(image, document.getElementsByClassName("row-image")[0]);
-                    
-                    document.getElementsByClassName("row-image")[0].style.marginBottom = "0px";
-                    
-                    text = document.getElementsByClassName("row-text odd-row")[0];
-                    text.style.zIndex = 0;
-                    
-                    resizeFlag = true;
+
+
+                function dropAccordion(question) {
+                    var e = document.getElementById(question),
+                        child = e.getElementsByClassName("accordion-content");
+
+                    if (child[0].style.display == "") {
+                        child[0].style.display = "block";
+                        child[0].style.color = 'color:rgba(0, 0, 0, 1)';
+                        e.getElementsByTagName('span')[0].style.transform = 'rotate(90deg)';
+                    } else {
+                        child[0].style.display = "";
+                        child[0].style.color = 'color:rgba(0, 0, 0, 0)';
+                        e.getElementsByTagName('span')[0].style.transform = 'rotate(0deg)';
+                    }
                 }
-                
-                if(window.innerWidth <= 1087 && footerFlag){
-                    console.log("Med");
-                    bottomPanel = document.getElementsByClassName("footer-panel")[0];
-                    
-                    // Add active classes to footer panels
-                    bottomPanel.className += " med-bottom-panel";
-                    document.getElementsByClassName("footer-panel")[0].className += " med-footer-panel";
-                    document.getElementsByClassName("footer-panel")[1].className += " med-footer-panel";
-                    
-                    // Move title panel to bottom of footer
-                    insertAfter(bottomPanel, document.getElementsByClassName("footer-panel med-footer-panel")[1]);
-                    
-                    footerFlag = false;
+
+                function insertAfter(newNode, referenceNode) {
+                    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
                 }
-                else if(window.innerWidth > 1087 && !footerFlag){
-                    console.log("Reg");
-                     bottomPanel = document.getElementsByClassName("footer-panel med-bottom-panel")[0];
-                    
-                    // Add active classes to footer panels
-                    bottomPanel.className = "footer-panel";
-                    document.getElementsByClassName("footer-panel med-footer-panel")[0].className = "footer-panel";
-                    document.getElementsByClassName("footer-panel med-footer-panel")[0].className = "footer-panel";
-                    
-                    // Move title panel to top of footer
-                    bottomPanel.parentNode.insertBefore(bottomPanel, document.getElementsByClassName("footer-panel")[0]);
-                    
-                    footerFlag = true;
+
+                function onResize() {
+
+                    if (window.innerWidth <= 1020 && resizeFlag) {
+                        var aboutSection = document.getElementById("About-ADC"),
+                            image = document.getElementsByClassName("row-image odd-row")[0],
+                            text = document.getElementsByClassName("row-text odd-row")[0];
+
+                        // Remove image from before txt so it can be put after txt
+                        insertAfter(image, document.getElementsByClassName("row-text odd-row")[0]);
+
+                        text.style.zIndex = -1;
+                        document.getElementsByClassName("row-image")[0].style.marginBottom = "20px";
+
+                        resizeFlag = false;
+                    } else if (window.innerWidth > 1020 && !resizeFlag) {
+                        var image = document.getElementsByClassName("row-image odd-row")[0];
+
+                        insertAfter(image, document.getElementsByClassName("row-image")[0]);
+
+                        document.getElementsByClassName("row-image")[0].style.marginBottom = "0px";
+
+                        var text = document.getElementsByClassName("row-text odd-row")[0];
+                        text.style.zIndex = 0;
+
+                        resizeFlag = true;
+                    }
+
+                    if(window.innerWidth <= 1087 && footerFlag) {
+                        bottomPanel = document.getElementsByClassName("footer-panel")[0];
+
+                        // Add active classes to footer panels
+                        bottomPanel.className += " med-bottom-panel";
+                        document.getElementsByClassName("footer-panel")[1].className += " med-footer-panel";
+                        document.getElementsByClassName("footer-panel")[2].className += " med-footer-panel";
+
+                        // Move title panel to bottom of footer
+                        insertAfter(bottomPanel, document.getElementsByClassName("footer-panel med-footer-panel")[1]);
+
+                        footerFlag = false;
+                    } else if(window.innerWidth > 1087 && !footerFlag) {
+                         bottomPanel = document.getElementsByClassName("footer-panel med-bottom-panel")[0];
+
+                        // Add active classes to footer panels
+                        bottomPanel.className = "footer-panel";
+                        document.getElementsByClassName("footer-panel med-footer-panel")[0].className = "footer-panel";
+                        document.getElementsByClassName("footer-panel med-footer-panel")[0].className = "footer-panel";
+
+                        // Move title panel to top of footer
+                        bottomPanel.parentNode.insertBefore(bottomPanel, document.getElementsByClassName("footer-panel")[0]);
+
+                        footerFlag = true;
+                    }
                 }
-            }
-            
-            function insertAfter(newNode, referenceNode) {
-				referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-			}
-            
-            function sidebarPullout(){
-                var toolbar = document.getElementById('menuToolbar');
-				var topLine = toolbar.getElementsByTagName('span')[0];
-				var middleLine = toolbar.getElementsByTagName('span')[1];
-				var bottomLine = toolbar.getElementsByTagName('span')[2];
-				
-				if(!sidebarFlag){
-					//Add active class to nav
-                    document.getElementById("menuToolbar").className = "nav-active";
-					
-                    //Pull sidebar out
-                    document.getElementsByClassName("sidebar")[0].className += " active-sidebar";
-                    
-                    //Pull main page to the left with sidebar
-                    document.getElementById("page").className = "active-page";
-                    
-                    sidebarFlag = true;
-				}
-				else{
-					//Remove active class from nav
-                    document.getElementById("menuToolbar").className = "";
-					
-                    //Push sidebar back in
-                    document.getElementsByClassName("sidebar")[0].className = "sidebar";
-                    
-                    //Push main page to the right with sidebar
-                    document.getElementById("page").className = "";
-                    
-                    sidebarFlag = false;
-				}
-            }
-		</script>
-		<footer style="display:inline-block">
-			<div class="footer">
-				<div class="footer-panel">
-					<h4>NCSU ADC</h4>
-					<br>
-					<br>
-					<div class="copyright">© 2017 NCSU App Development Club</div>
-				</div>
-				<div class="footer-panel">
-					<h4>Resources</h4>
-					<div class="footer-links">
-					<div class="sub-footer">
-					<div class="sub-divider" style="width:25%">
-						<p>iOS:</p>
-					</div>
-					<div class="sub-divider" style="width:75%">
-						<a href="https://thenewboston.com/videos.php?cat=280" target="_blank" >
-							The New Boston - iOS
-							<br>
-						</a>
-						<a href="https://developer.apple.com/library/prerelease/content/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html" target="_blank">
-							Swift Tour - Apple
-							<br>
-						</a>
-					</div>
-					</div>
-					<div class="sub-footer">
-					<div class="sub-divider" style="width:25%">
-						<p>Android:</p>
-					</div>
-					<div class="sub-divider" style="width:75%">
-						<a href="https://thenewboston.com/videos.php?cat=6" target="_blank">
-							The New Boston - Android
-						</a>
-					</div>
-					</div>
-					</div>
-				</div>
-				<div class="footer-panel">
-					<h4>Contact Us</h4>
-					<div class="footer-links">
-					<div class="sub-footer">
-					<div class="sub-divider" style="width:40%">
-						<p>Weekly Meetings:</p>
-					</div>
-					<div class="sub-divider">
-						<a href="https://www.google.com/maps/place/Talley+Student+Union,+2610+Cates+Ave,+Raleigh,+NC+27606/@35.784007,-78.6713573,19z/data=!3m1!4b1!4m5!3m4!1s0x89acf59100cb7f67:0x1c6c1796c5652bd4!8m2!3d35.7840099!4d-78.670987" target="_blank">
-							<address>
-								NC State University
-								<br>
-								Student Involvement Room
-								<br>
-								Wednesdays 8:00PM
-							</address>
-						</a>
-					</div>
-					</div>
-					<div class="sub-footer">
-					<div class="sub-divider" style="width:20%">
-						<p>Email:</p>
-					</div>
-					<div class="sub-divider">
-						<a href="mailto:zaali@ncsu.edu?Subject=App%20Development%20Club" target="_top" style="text-decoration:underline;">
-							appdevelopmentclub@gmail.com
-						</a>
-					</div>
-					</div>
-					</div>
-				</div>
-			</div>
-		</footer>
+
+                function sidebarPullout() {
+                    var toolbar = document.getElementById('menuToolbar');
+                    var topLine = toolbar.getElementsByTagName('span')[0];
+                    var middleLine = toolbar.getElementsByTagName('span')[1];
+                    var bottomLine = toolbar.getElementsByTagName('span')[2];
+
+                    if(!sidebarFlag) {
+                        //Add active class to nav
+                        document.getElementById("menuToolbar").className = "nav-active";
+
+                        //Pull sidebar out
+                        document.getElementsByClassName("sidebar")[0].className += " active-sidebar";
+
+                        //Pull main page to the left with sidebar
+                        document.getElementById("page").className = "active-page";
+
+                        sidebarFlag = true;
+                    } else {
+                        //Remove active class from nav
+                        document.getElementById("menuToolbar").className = "";
+
+                        //Push sidebar back in
+                        document.getElementsByClassName("sidebar")[0].className = "sidebar";
+
+                        //Push main page to the right with sidebar
+                        document.getElementById("page").className = "";
+
+                        sidebarFlag = false;
+
+                    }
+
+                }
+
+                window.addEventListener('resize', function () {onResize()});
+                window.onload(onResize());
+            </script>
+
+            <footer style="display:inline-block">
+                <div class="footer">
+                    <div class="footer-panel">
+                        <h4>NCSU ADC</h4>
+                        <br>
+                        <br>   
+                        <div class="copyright">© 2017 NCSU App Development Club</div>
+                    </div>
+                    <div class="footer-panel">
+                        <h4>Resources</h4>
+                        <div class="footer-links">
+                        <div class="sub-footer">
+                        <div class="sub-divider" style="width:25%">
+                            <p>iOS:</p>
+                        </div>
+                        <div class="sub-divider" style="width:75%">
+                            <a href="https://thenewboston.com/videos.php?cat=280" target="_blank" >
+                                The New Boston - iOS
+                                <br>
+                            </a>
+                            <a href="https://developer.apple.com/library/prerelease/content/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html" target="_blank">
+                                Swift Tour - Apple
+                                <br>
+                            </a>
+                        </div>
+                        </div>
+                        <div class="sub-footer">
+                        <div class="sub-divider" style="width:25%">
+                            <p>Android:</p>
+                        </div>
+                        <div class="sub-divider" style="width:75%">
+                            <a href="https://thenewboston.com/videos.php?cat=6" target="_blank">
+                                The New Boston - Android
+                            </a>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="footer-panel">
+                        <h4>Contact Us</h4>
+                        <div class="footer-links">
+                        <div class="sub-footer">
+                        <div class="sub-divider" style="width:40%">
+                            <p>Weekly Meetings:</p>
+                        </div>
+                        <div class="sub-divider">
+                            <a href="https://www.google.com/maps/place/Talley+Student+Union,+2610+Cates+Ave,+Raleigh,+NC+27606/@35.784007,-78.6713573,19z/data=!3m1!4b1!4m5!3m4!1s0x89acf59100cb7f67:0x1c6c1796c5652bd4!8m2!3d35.7840099!4d-78.670987" target="_blank">
+                                <address>
+                                    NC State University
+                                    <br>
+                                    Student Involvement Room
+                                    <br>
+                                    Wednesdays 8:00PM
+                                </address>
+                            </a>
+                        </div>
+                        </div>
+                        <div class="sub-footer">
+                        <div class="sub-divider" style="width:20%">
+                            <p>Email:</p>
+                        </div>
+                        <div class="sub-divider">
+                            <a href="mailto:zaali@ncsu.edu?Subject=App%20Development%20Club" target="_top" style="text-decoration:underline;">
+                                appdevelopmentclub@gmail.com
+                            </a>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
 	</body>
 	

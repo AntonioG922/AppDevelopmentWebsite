@@ -448,6 +448,10 @@ hr{
 	-moz-transition: width 1s, height 1s;
 	-o-transition: width 1s, height 1s;
     transition: width 1s, height 1s;
+    -webkit-transition-delay: 1s; /* Safari  */
+	-moz-transition-delay: 1s;   /* Mozilla */
+	-o-transition-delay: 1s;    /* Opera   */
+    transition-delay: 1s;
 }
 
 .right-project{
@@ -457,12 +461,24 @@ hr{
 }
 
 .project:hover{
-	height:550px;
+    height:200%;
+    -webkit-transition-delay: 1s; /* Safari  */
+	-moz-transition-delay: 1s;   /* Mozilla */
+	-o-transition-delay: 1s;    /* Opera   */
+    transition-delay: 1s;
 }
 
 .project h5{
 	font-size:24px;
 	text-align:center;
+}
+
+.project p{
+    margin-bottom:0px;
+	-webkit-transition: all 1s; /* Safari  */
+	-moz-transition: all 1s;	 /* Mozilla */
+	-o-transition: all 1s;    /* Opera   */
+    transition: all 1s;
 }
 
 .project h5, .project p{
@@ -486,12 +502,20 @@ hr{
 
 .project:hover .publish{
 	color:rgba(187, 187, 187, 1);
-    margin-top: 100px;
 	visibility:visible;
+    margin-bottom:0px;
     -webkit-transition-delay: 1s; /* Safari  */
 	-moz-transition-delay: 1s;   /* Mozilla */
 	-o-transition-delay: 1s;    /* Opera   */
     transition-delay: 1s;
+}
+
+.project:hover p{
+    margin-bottom:100px;
+	-webkit-transition: all 1s; /* Safari  */
+	-moz-transition: all 1s;	 /* Mozilla */
+	-o-transition: all 1s;    /* Opera   */
+    transition: all 1s;
 }
 
 .box-shadow{
@@ -505,7 +529,7 @@ hr{
 .publish{
     position:absolute;
     left:0;
-    bottom:0;
+    bottom:10px;
 	font-size:20px;
 	color:rgba(0, 0, 0, 0);
 	visibility:hidden;
