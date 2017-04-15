@@ -140,9 +140,9 @@ img{
 .header-h4{
 	position:relative;
 	bottom:20px;
-	left:240px;
+	left:calc(50% + 100px);
 	font-size:24px;
-    max-width:inherit;
+    max-width:300px;
 	font-family:'Raleway';
 	color:rgba(0, 0, 0, 0);
 	-webkit-transition: all .2s;  /* Safari  */
@@ -443,6 +443,7 @@ hr{
 	width:400px;
 	min-height:500px;
 	margin-left:10%;
+    padding-bottom:2%;
 	float:left;
 	-webkit-transition: width 1s, height 1s; /* Safari */
 	-moz-transition: width 1s, height 1s;
@@ -700,14 +701,18 @@ a:active{
 	}
     .project{
         width:80%;
-        float:initial;
+        position:relative;
+        left:10%;  /*Did this instead of float:none because it was messing with transition on project leave*/
         margin:auto;
         margin-top:50px;
         margin-bottom:50px;
     }
+    .right-project{
+        left:-10%;
+    }
     .header-h4{
         font-size:18px;
-        left:205px;
+        left: calc(50% + 60px);
     }
 }
 
@@ -739,7 +744,7 @@ a:active{
     }
     .header-h4{
         bottom:-100px;
-        left:0px;
+        left: calc(50% - 150px);
         font-size:24px;
     }
 }

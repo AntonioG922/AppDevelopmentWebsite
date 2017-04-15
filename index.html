@@ -172,12 +172,12 @@
                 <div class="accordion-drop" id="question2" onclick="dropAccordion('question2')">
                     <h3 class="accordion-toggle">Do I need any programming experience to join?</h3>
                     <span class="glyphicon glyphicon-chevron-right"></span>
-                    <p class="accordion-content">Yes you dimwitted fuck</p>
+                    <p class="accordion-content">No</p>
                 </div>
                 <div class="accordion-drop" id="question3" onclick="dropAccordion('question3')">
                     <h3 class="accordion-toggle">When does the club meet?</h3>
                     <span class="glyphicon glyphicon-chevron-right"></span>
-                    <p class="accordion-content">Wednesdays at 8:00 PM in the Student Involvement Room(located in Talley Student Union)</p>
+                    <p class="accordion-content">Wednesdays at 8:00 PM in the Student Involvement Room (located in Talley Student Union)</p>
                 </div>
                 <div class="accordion-drop" id="question4" onclick="dropAccordion('question4')">
                     <h3 class="accordion-toggle">Are there any club dues?</h3>
@@ -186,6 +186,81 @@
                 </div>
             </div>
             </ul>
+
+            <footer style="display:inline-block">
+                <div class="footer">
+                    <div class="footer-panel">
+                        <h4>NCSU ADC</h4>
+                        <br>
+                        <br>   
+                        <div class="copyright">© 2017 NCSU App Development Club</div>
+                    </div>
+                    <div class="footer-panel">
+                        <h4>Resources</h4>
+                        <div class="footer-links">
+                        <div class="sub-footer">
+                        <div class="sub-divider" style="width:25%">
+                            <p>iOS:</p>
+                        </div>
+                        <div class="sub-divider" style="width:75%">
+                            <a href="https://thenewboston.com/videos.php?cat=280" target="_blank" >
+                                The New Boston - iOS
+                                <br>
+                            </a>
+                            <a href="https://developer.apple.com/library/prerelease/content/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html" target="_blank">
+                                Swift Tour - Apple
+                                <br>
+                            </a>
+                        </div>
+                        </div>
+                        <div class="sub-footer">
+                        <div class="sub-divider" style="width:25%">
+                            <p>Android:</p>
+                        </div>
+                        <div class="sub-divider" style="width:75%">
+                            <a href="https://thenewboston.com/videos.php?cat=6" target="_blank">
+                                The New Boston - Android
+                            </a>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="footer-panel">
+                        <h4>Contact Us</h4>
+                        <div class="footer-links">
+                        <div class="sub-footer">
+                        <div class="sub-divider" style="width:40%">
+                            <p>Weekly Meetings:</p>
+                        </div>
+                        <div class="sub-divider">
+                            <a href="https://www.google.com/maps/place/Talley+Student+Union,+2610+Cates+Ave,+Raleigh,+NC+27606/@35.784007,-78.6713573,19z/data=!3m1!4b1!4m5!3m4!1s0x89acf59100cb7f67:0x1c6c1796c5652bd4!8m2!3d35.7840099!4d-78.670987" target="_blank">
+                                <address>
+                                    NC State University
+                                    <br>
+                                    Student Involvement Room
+                                    <br>
+                                    Wednesdays 8:00PM
+                                </address>
+                            </a>
+                        </div>
+                        </div>
+                        <div class="sub-footer">
+                        <div class="sub-divider" style="width:20%">
+                            <p>Email:</p>
+                        </div>
+                        <div class="sub-divider">
+                            <a href="mailto:zaali@ncsu.edu?Subject=App%20Development%20Club" target="_top" style="text-decoration:underline;">
+                                appdevelopmentclub@gmail.com
+                            </a>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+	</body>
+    
 
             <script>
                 var resizeFlag = true;
@@ -305,81 +380,9 @@
                 }
 
                 window.addEventListener('resize', function () {onResize()});
-                window.onload(onResize());
+                window.onload = function(){
+                    onResize()
+                };
             </script>
-
-            <footer style="display:inline-block">
-                <div class="footer">
-                    <div class="footer-panel">
-                        <h4>NCSU ADC</h4>
-                        <br>
-                        <br>   
-                        <div class="copyright">© 2017 NCSU App Development Club</div>
-                    </div>
-                    <div class="footer-panel">
-                        <h4>Resources</h4>
-                        <div class="footer-links">
-                        <div class="sub-footer">
-                        <div class="sub-divider" style="width:25%">
-                            <p>iOS:</p>
-                        </div>
-                        <div class="sub-divider" style="width:75%">
-                            <a href="https://thenewboston.com/videos.php?cat=280" target="_blank" >
-                                The New Boston - iOS
-                                <br>
-                            </a>
-                            <a href="https://developer.apple.com/library/prerelease/content/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html" target="_blank">
-                                Swift Tour - Apple
-                                <br>
-                            </a>
-                        </div>
-                        </div>
-                        <div class="sub-footer">
-                        <div class="sub-divider" style="width:25%">
-                            <p>Android:</p>
-                        </div>
-                        <div class="sub-divider" style="width:75%">
-                            <a href="https://thenewboston.com/videos.php?cat=6" target="_blank">
-                                The New Boston - Android
-                            </a>
-                        </div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="footer-panel">
-                        <h4>Contact Us</h4>
-                        <div class="footer-links">
-                        <div class="sub-footer">
-                        <div class="sub-divider" style="width:40%">
-                            <p>Weekly Meetings:</p>
-                        </div>
-                        <div class="sub-divider">
-                            <a href="https://www.google.com/maps/place/Talley+Student+Union,+2610+Cates+Ave,+Raleigh,+NC+27606/@35.784007,-78.6713573,19z/data=!3m1!4b1!4m5!3m4!1s0x89acf59100cb7f67:0x1c6c1796c5652bd4!8m2!3d35.7840099!4d-78.670987" target="_blank">
-                                <address>
-                                    NC State University
-                                    <br>
-                                    Student Involvement Room
-                                    <br>
-                                    Wednesdays 8:00PM
-                                </address>
-                            </a>
-                        </div>
-                        </div>
-                        <div class="sub-footer">
-                        <div class="sub-divider" style="width:20%">
-                            <p>Email:</p>
-                        </div>
-                        <div class="sub-divider">
-                            <a href="mailto:zaali@ncsu.edu?Subject=App%20Development%20Club" target="_top" style="text-decoration:underline;">
-                                appdevelopmentclub@gmail.com
-                            </a>
-                        </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
-	</body>
 	
 </html>
